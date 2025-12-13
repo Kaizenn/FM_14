@@ -1,0 +1,174 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300, 400, 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --white: #ffffff;
+  --black: #000000;
+
+  --grey-500: #626c7f;
+  --grey-50: #f4f6fa;
+
+  --blue-950: #2d3949;
+  --blue-900: #313e51;
+  --blue-850: #3b4d66;
+  --blue-500: #306aff;
+  --blue-300: #abc1e1;
+  --blue-100: #edf1f9;
+  --blue-50: #ebf0ff;
+
+  --green-500: #2fd887;
+  --green-100: #e0fdef;
+
+  --purple-600: #a729f5;
+  --purple-300: #ce7cff;
+  --purple-100: #f6e7ff;
+
+  --orange-400: #ff7e35;
+  --orange-50: #fff5ed;
+
+  --red-500: #ee5454;
+
+  --font-primary: 'Rubik', sans-serif;
+}
+
+@theme {
+  /* Surfaces */
+  --bg-page: var(--grey-50);
+  --bg-surface: var(--white); /* cards / panels */
+  --bg-control: var(--white); /* items cliquables */
+  --bg-control-subtle: var(--grey-50);
+
+  /* Text */
+  --fg-primary: var(--blue-900);
+  --fg-secondary: var(--grey-500);
+  --fg-inverse: var(--white);
+  --fg-control: var(--fg-primary);
+  --fg-control-subtle: var(--fg-secondary);
+
+  /* Borders */
+  --border-default: var(--blue-100);
+
+  /* Accent */
+  --accent-primary: var(--purple-600);
+  --accent-primary-hover: var(--purple-300);
+  --on-accent: var(--white);
+
+  /* Control */
+  --control-border-selected: var(--accent-primary);
+  --control-subtle-selected: var(--accent-primary);
+  --control-border-result-success: var(--state-success);
+  --control-border-result-error: var(--state-error);
+
+  /* Component: Progress */
+  --progress-track: var(--bg-surface);
+  --progress-border: var(--progress-track);
+  --progress-fill: var(--accent-primary);
+
+  --state-success: var(--green-500);
+  --state-error: var(--red-500);
+  --on-state-error: var(--state-error);
+}
+
+html.dark {
+  /* Surfaces */
+  --bg-page: var(--blue-900);
+  --bg-surface: var(--blue-850);
+  --bg-control: var(--blue-850);
+  --bg-control-subtle: var(--grey-50);
+
+  /* Text */
+  --fg-primary: var(--white);
+  --fg-secondary: var(--blue-300);
+  --fg-inverse: var(--blue-900);
+  --fg-control: var(--fg-primary);
+  --fg-control-subtle: var(--grey-500);
+
+  /* Borders */
+  --border-default: var(--blue-850);
+
+  /* Accent */
+  --accent-primary: var(--purple-600);
+  --accent-primary-hover: var(--purple-300);
+  --on-accent: var(--white);
+
+  /* Control */
+  --control-border-selected: var(--accent-primary);
+  --control-subtle-selected: var(--accent-primary);
+  --control-border-result-success: var(--state-success);
+  --control-border-result-error: var(--state-error);
+
+  /* Component: Progress */
+  --progress-track: var(--bg-surface);
+  --progress-border: var(--progress-track);
+  --progress-fill: var(--accent-primary);
+
+  --state-success: var(--green-500);
+  --state-error: var(--red-500);
+  --on-state-error: var(--fg-primary);
+}
+
+@layer utilities {
+  .text-preset1 {
+    font-size: clamp(5.5rem, 4.5rem + 5vw, 9rem);
+    line-height: 1;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+  .text-preset2 {
+    font-size: clamp(2.5rem, 2.0714rem + 2.1429vw, 4rem);
+    line-height: 1;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+  .text-preset2-light {
+    font-size: clamp(2.5rem, 2.0714rem + 2.1429vw, 4rem);
+    line-height: 1;
+    letter-spacing: 0;
+    font-weight: 300;
+  }
+  .text-preset3 {
+    font-size: clamp(1.25rem, 0.9643rem + 1.4286vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+  .text-preset4 {
+    font-size: clamp(1.125rem, 0.9464rem + 0.8929vw, 1.75rem);
+    line-height: 1;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+  .text-preset5 {
+    font-size: clamp(0.875rem, 0.6964rem + 0.8929vw, 1.5rem);
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+  .text-preset5-regular {
+    font-size: clamp(0.875rem, 0.6964rem + 0.8929vw, 1.5rem);
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .text-preset6 {
+    font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
+:root {
+  background-color: var(--white);
+  font-family: var(--font-primary);
+  color: var(--slate-600);
+}
